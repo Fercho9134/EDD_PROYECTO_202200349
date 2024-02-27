@@ -1,0 +1,35 @@
+ digraph G {
+ subgraph cluster_0 {
+ label ="Cola Recepción"
+ color=brown
+ node [shape = box, fontname = "Arial", style = filled, color = "beige"]
+ "Nodo    0"[label = "Maria Silva\nIMG-G:     1   \nIMG-P:     2   "]
+ "Nodo    1"[label = "Elena Diaz\nIMG-G:     3   \nIMG-P:     3   "]
+ "Nodo    0" -> "Nodo    1" [dir=back];
+ "Nodo    2"[label = "Pablo Diaz\nIMG-G:     4   \nIMG-P:     3   "]
+ "Nodo    1" -> "Nodo    2" [dir=back];
+ "Nodo    3"[label = "Maria Martin\nIMG-G:     1   \nIMG-P:     4   "]
+ "Nodo    2" -> "Nodo    3" [dir=back];
+ "Nodo    4"[label = "Manuel Paz\nIMG-G:     1   \nIMG-P:     1   "]
+ "Nodo    3" -> "Nodo    4" [dir=back];
+ "Nodo    5"[label = "Carmen Gomez\nIMG-G:     0   \nIMG-P:     4   "]
+ "Nodo    4" -> "Nodo    5" [dir=back];
+ "Nodo    6"[label = "Pablo Silva\nIMG-G:     4   \nIMG-P:     1   "]
+ "Nodo    5" -> "Nodo    6" [dir=back];
+ "Nodo    7"[label = "Sofia Moreno\nIMG-G:     2   \nIMG-P:     3   "]
+ "Nodo    6" -> "Nodo    7" [dir=back];
+ "Nodo    8"[label = "Pedro Lopez\nIMG-G:     3   \nIMG-P:     3   "]
+ "Nodo    7" -> "Nodo    8" [dir=back];
+ }
+ subgraph cluster_1 {
+ label ="Lista Ventanillas"
+ color=blue
+ node [shape = box, fontname = "Arial", style = filled, color = "lightblue"]
+ "Nodo    9"[label = "Ventanilla     1\nPablo Paz\nIMG-G:     1   \nIMG-P:     3   "]
+ "Nodo   11"[label = "Ventanilla     2\nVacia"]
+ "Nodo    9" -> "Nodo   11";
+ "Nodo   13"[label = "Ventanilla     3\nVacia"]
+ "Nodo   11" -> "Nodo   13";
+ }
+ rankdir=LR
+ }

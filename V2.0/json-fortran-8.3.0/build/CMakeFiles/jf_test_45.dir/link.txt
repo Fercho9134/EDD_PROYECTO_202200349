@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\jf_test_45.dir/objects.a
+C:\TDM-GCC-64\bin\ar.exe qc CMakeFiles\jf_test_45.dir/objects.a @CMakeFiles\jf_test_45.dir\objects1.rsp
+C:\TDM-GCC-64\bin\gfortran.exe  -fbacktrace -fno-omit-frame-pointer -O3 -Wl,--whole-archive CMakeFiles\jf_test_45.dir/objects.a -Wl,--no-whole-archive -o bin\jf_test_45.exe -Wl,--out-implib,libjf_test_45.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\jf_test_45.dir\linkLibs.rsp
