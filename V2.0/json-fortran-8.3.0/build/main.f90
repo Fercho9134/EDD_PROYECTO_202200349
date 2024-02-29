@@ -224,10 +224,13 @@ contains
                 imagenes_totales = cliente_finalizado%cantidad_imagenes_grandes + cliente_finalizado%cantidad_imagenes_pequenas
                 call lista_clientes_espera_global%eliminar_nodo_lista_doble_circular(cliente_finalizado%id_cliente,&
                                                                                     cliente_eliminado_espera)
-                call lista_clientes_atendidos_global%agregar_cliente_atendido(cliente_eliminado_espera%nombre_cliente, &
-                                                                             cliente_eliminado_espera%ventanilla_atendida, &
-                                                                             imagenes_totales, &
-                                                                             cliente_eliminado_espera%pasos_esperados)
+                call lista_clientes_atendidos_global%agregar_cliente_atendido(cliente_eliminado_espera%id_cliente,& 
+                cliente_eliminado_espera%nombre_cliente, &
+                cliente_eliminado_espera%ventanilla_atendida, &
+                imagenes_totales, &
+                cliente_eliminado_espera%pasos_esperados, &
+                cliente_eliminado_espera%cantidad_imagenes_grandes_original,&
+                cliente_eliminado_espera%cantidad_imagenes_pequenas_original)
                 print *, "El cliente ", cliente_eliminado_espera%nombre_cliente, &
                 " ha sido atendido completamente"
 
@@ -433,31 +436,19 @@ contains
 
     ! Subrutina para manejar la opción de estado en memoria de las estructuras
     subroutine estado_en_memoria()
-        ! Implementar la lógica para mostrar el estado en memoria de las estructuras
-        print *, "Estado en memoria de las estructuras"
+        integer :: io
+        io = 1
+        call graficar_estructuras(io)
     end subroutine estado_en_memoria
 
     ! Subrutina para manejar la opción de reportes
     subroutine reportes()
-
         integer :: io
-        io = 1
+        integer :: id_cliente
 
-        print *, "Reportes"
-        print *, "1. Reporte de clientes"
-        call cola_clientes_global%imprimir_cola_clientes()
-        print *, "2. Reporte de ventanillas"
-        call lista_ventanillas_global%imprimir_lista()
-        print *, "3. Reporte de clientes en espera"
-        call lista_clientes_espera_global%imprimir_lista_doble_circular()
-        print *, "4. Reporte de impresiones grandes"
-        call cola_impresion_grandes_global%imprimir_cola()
-        print *, "5. Reporte de impresiones pequeñas"
-        call cola_impresion_pequenas_global%imprimir_cola()
-        print *, "6. Reporte de clientes atendidos"
-        call lista_clientes_atendidos_global%imprimir_lista_clientes_atendidos()
-
-        call graficar_estructuras(io)
+        print *, "Ingrese el id del cliente para obtener sus datos especificos: "
+        read(*, *) id_cliente
+        call generar_reportes(io, id_cliente)
 
     end subroutine reportes
 

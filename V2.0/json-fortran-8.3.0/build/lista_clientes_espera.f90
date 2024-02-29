@@ -102,7 +102,6 @@ contains
             print *, "El nodo de la lista doblemente enlazada es nulo"
             return
         end if
-    
         ! Asignar valores al nuevo nodo
         new_node%id_cliente = id_cliente
         allocate(new_node%tamano, source=tamano)
