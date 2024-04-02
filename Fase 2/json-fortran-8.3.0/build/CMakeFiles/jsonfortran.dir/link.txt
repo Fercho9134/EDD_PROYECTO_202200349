@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\jsonfortran.dir/objects.a
+C:\TDM-GCC-64\bin\ar.exe qc CMakeFiles\jsonfortran.dir/objects.a @CMakeFiles\jsonfortran.dir\objects1.rsp
+C:\TDM-GCC-64\bin\gfortran.exe  -fbacktrace -fno-omit-frame-pointer -O3 -shared -o libjsonfortran.dll -Wl,--out-implib,libjsonfortran.dll.a -Wl,--major-image-version,8,--minor-image-version,3 -Wl,--whole-archive CMakeFiles\jsonfortran.dir/objects.a -Wl,--no-whole-archive

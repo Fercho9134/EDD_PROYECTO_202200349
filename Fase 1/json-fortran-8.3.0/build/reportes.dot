@@ -1,0 +1,43 @@
+ digraph G {
+ subgraph cluster_0 {
+ label ="Top 5 Clientes Atendidos con mayor cantidad de imagenes grandes"
+ color=brown
+ node [shape = box, fontname = "Arial", style = filled, color = "beige"]
+ "Nodo    0"[label = "ID:     3   \nNombre cliente: Javier Martinez                                                                                     \nIMG-G:     3   \nIMG-P:     1   \nVentanilla que lo atendió:     3   \nPasos en el sistema:    18                   "]
+ "Nodo    1"[label = "ID:     6   \nNombre cliente: Ana Fernandez                                                                                       \nIMG-G:     3   \nIMG-P:     1   \nVentanilla que lo atendió:     3   \nPasos en el sistema:    30                   "]
+ "Nodo    0" -> "Nodo    1";
+ "Nodo    2"[label = "ID:     1   \nNombre cliente: Carlos Perez                                                                                        \nIMG-G:     2   \nIMG-P:     2   \nVentanilla que lo atendió:     1   \nPasos en el sistema:    10                   "]
+ "Nodo    1" -> "Nodo    2";
+ "Nodo    3"[label = "ID:     5   \nNombre cliente: Diego Lopez                                                                                         \nIMG-G:     2   \nIMG-P:     2   \nVentanilla que lo atendió:     2   \nPasos en el sistema:    24                   "]
+ "Nodo    2" -> "Nodo    3";
+ "Nodo    4"[label = "ID:     2   \nNombre cliente: Laura Rodriguez                                                                                     \nIMG-G:     1   \nIMG-P:     3   \nVentanilla que lo atendió:     2   \nPasos en el sistema:    12                   "]
+ "Nodo    3" -> "Nodo    4";
+ }
+ subgraph cluster_1 {
+ label ="Top 5 Clientes Atendidos con menor cantidad de imagenes pequeñas"
+ color=blue
+ node [shape = box, fontname = "Arial", style = filled, color = "lightblue"]
+ "Nodo    5"[label = "ID: 65607   \nNombre cliente: Juan Ruiz                                                                                           \nIMG-G:     0   \nIMG-P:     0   \nVentanilla que lo atendió:     3   \nPasos en el sistema:    21                   "]
+ "Nodo    6"[label = "ID:     3   \nNombre cliente: Javier Martinez                                                                                     \nIMG-G:     3   \nIMG-P:     1   \nVentanilla que lo atendió:     3   \nPasos en el sistema:    18                   "]
+ "Nodo    5" -> "Nodo    6";
+ "Nodo    7"[label = "ID: 63743   \nNombre cliente: Carmen Lopez                                                                                        \nIMG-G:     0   \nIMG-P:     1   \nVentanilla que lo atendió:     2   \nPasos en el sistema:    25                   "]
+ "Nodo    6" -> "Nodo    7";
+ "Nodo    8"[label = "ID:     6   \nNombre cliente: Ana Fernandez                                                                                       \nIMG-G:     3   \nIMG-P:     1   \nVentanilla que lo atendió:     3   \nPasos en el sistema:    30                   "]
+ "Nodo    7" -> "Nodo    8";
+ "Nodo    9"[label = "ID:     1   \nNombre cliente: Carlos Perez                                                                                        \nIMG-G:     2   \nIMG-P:     2   \nVentanilla que lo atendió:     1   \nPasos en el sistema:    10                   "]
+ "Nodo    8" -> "Nodo    9";
+ }
+ subgraph cluster_2 {
+ label ="Cliente con mayor cantidad de pasos en el sistema"
+ color=green
+ node [shape = box, fontname = "Arial", style = filled, color = "lightgreen"]
+ "Nodo   10"[label = "ID:     6   \nNombre cliente: Ana Fernandez\nIMG-G:     3   \nIMG-P:     1   \nVentanilla que lo atendió:     3   \nPasos en el sistema:    30                   "]
+ }
+ subgraph cluster_3 {
+ label ="Datos sobre un cliente en especifico"
+ color=red
+ node [shape = box, fontname = "Arial", style = filled, color = "lightcoral"]
+ "Nodo   11"[label = "ID: 65607   \nNombre cliente: Juan Ruiz\nIMG-G:     0   \nIMG-P:     0   \nVentanilla que lo atendió:     3   \nPasos en el sistema:    21                   "]
+ }
+ rankdir=LR
+ }

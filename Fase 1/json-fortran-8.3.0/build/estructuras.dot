@@ -1,0 +1,254 @@
+ digraph G {
+ subgraph cluster_0 {
+ label ="Cola Recepción"
+ color=brown
+ node [shape = box, fontname = "Arial", style = filled, color = "beige"]
+ "Nodo    0"[label = "Manuel Gomez\nIMG-G:     1   \nIMG-P:     1   "]
+ "Nodo    1"[label = "Pedro Garcia\nIMG-G:     3   \nIMG-P:     3   "]
+ "Nodo    0" -> "Nodo    1" [dir=back];
+ "Nodo    2"[label = "Luis Sainz\nIMG-G:     2   \nIMG-P:     2   "]
+ "Nodo    1" -> "Nodo    2" [dir=back];
+ "Nodo    3"[label = "Javier Silva\nIMG-G:     1   \nIMG-P:     0   "]
+ "Nodo    2" -> "Nodo    3" [dir=back];
+ "Nodo    4"[label = "Laura Garcia\nIMG-G:     4   \nIMG-P:     1   "]
+ "Nodo    3" -> "Nodo    4" [dir=back];
+ "Nodo    5"[label = "Pedro Sainz\nIMG-G:     0   \nIMG-P:     4   "]
+ "Nodo    4" -> "Nodo    5" [dir=back];
+ "Nodo    6"[label = "Maria Garcia\nIMG-G:     0   \nIMG-P:     1   "]
+ "Nodo    5" -> "Nodo    6" [dir=back];
+ "Nodo    7"[label = "Pablo Aldana\nIMG-G:     2   \nIMG-P:     2   "]
+ "Nodo    6" -> "Nodo    7" [dir=back];
+ "Nodo    8"[label = "Carlos Lopez\nIMG-G:     1   \nIMG-P:     1   "]
+ "Nodo    7" -> "Nodo    8" [dir=back];
+ "Nodo    9"[label = "Sofia Martin\nIMG-G:     1   \nIMG-P:     3   "]
+ "Nodo    8" -> "Nodo    9" [dir=back];
+ "Nodo   10"[label = "Javier Silva\nIMG-G:     1   \nIMG-P:     2   "]
+ "Nodo    9" -> "Nodo   10" [dir=back];
+ "Nodo   11"[label = "Manuel Hernan\nIMG-G:     1   \nIMG-P:     2   "]
+ "Nodo   10" -> "Nodo   11" [dir=back];
+ "Nodo   12"[label = "Isabel Silva\nIMG-G:     2   \nIMG-P:     2   "]
+ "Nodo   11" -> "Nodo   12" [dir=back];
+ "Nodo   13"[label = "Elena Ruiz\nIMG-G:     0   \nIMG-P:     0   "]
+ "Nodo   12" -> "Nodo   13" [dir=back];
+ "Nodo   14"[label = "Isabel Diaz\nIMG-G:     3   \nIMG-P:     2   "]
+ "Nodo   13" -> "Nodo   14" [dir=back];
+ "Nodo   15"[label = "Laura Lopez\nIMG-G:     2   \nIMG-P:     2   "]
+ "Nodo   14" -> "Nodo   15" [dir=back];
+ "Nodo   16"[label = "Ana Moreno\nIMG-G:     2   \nIMG-P:     4   "]
+ "Nodo   15" -> "Nodo   16" [dir=back];
+ "Nodo   17"[label = "Maria Hernan\nIMG-G:     1   \nIMG-P:     3   "]
+ "Nodo   16" -> "Nodo   17" [dir=back];
+ "Nodo   18"[label = "Diego Lopez\nIMG-G:     0   \nIMG-P:     4   "]
+ "Nodo   17" -> "Nodo   18" [dir=back];
+ "Nodo   19"[label = "Laura Diaz\nIMG-G:     4   \nIMG-P:     0   "]
+ "Nodo   18" -> "Nodo   19" [dir=back];
+ "Nodo   20"[label = "Elena Gomez\nIMG-G:     4   \nIMG-P:     4   "]
+ "Nodo   19" -> "Nodo   20" [dir=back];
+ "Nodo   21"[label = "Elena Ruiz\nIMG-G:     0   \nIMG-P:     0   "]
+ "Nodo   20" -> "Nodo   21" [dir=back];
+ "Nodo   22"[label = "Pablo Martin\nIMG-G:     4   \nIMG-P:     4   "]
+ "Nodo   21" -> "Nodo   22" [dir=back];
+ "Nodo   23"[label = "Isabel Hernan\nIMG-G:     0   \nIMG-P:     0   "]
+ "Nodo   22" -> "Nodo   23" [dir=back];
+ "Nodo   24"[label = "Javier Hernan\nIMG-G:     3   \nIMG-P:     2   "]
+ "Nodo   23" -> "Nodo   24" [dir=back];
+ "Nodo   25"[label = "Juan Osorio\nIMG-G:     2   \nIMG-P:     1   "]
+ "Nodo   24" -> "Nodo   25" [dir=back];
+ "Nodo   26"[label = "Pablo Diaz\nIMG-G:     4   \nIMG-P:     2   "]
+ "Nodo   25" -> "Nodo   26" [dir=back];
+ "Nodo   27"[label = "Isabel Moreno\nIMG-G:     3   \nIMG-P:     0   "]
+ "Nodo   26" -> "Nodo   27" [dir=back];
+ "Nodo   28"[label = "Pablo Sainz\nIMG-G:     2   \nIMG-P:     0   "]
+ "Nodo   27" -> "Nodo   28" [dir=back];
+ "Nodo   29"[label = "Juan Gomez\nIMG-G:     1   \nIMG-P:     4   "]
+ "Nodo   28" -> "Nodo   29" [dir=back];
+ "Nodo   30"[label = "Sofia Garcia\nIMG-G:     1   \nIMG-P:     0   "]
+ "Nodo   29" -> "Nodo   30" [dir=back];
+ "Nodo   31"[label = "Elena Ruiz\nIMG-G:     3   \nIMG-P:     3   "]
+ "Nodo   30" -> "Nodo   31" [dir=back];
+ "Nodo   32"[label = "Laura Diaz\nIMG-G:     4   \nIMG-P:     0   "]
+ "Nodo   31" -> "Nodo   32" [dir=back];
+ "Nodo   33"[label = "Javier Lopez\nIMG-G:     1   \nIMG-P:     4   "]
+ "Nodo   32" -> "Nodo   33" [dir=back];
+ "Nodo   34"[label = "Maria Garcia\nIMG-G:     3   \nIMG-P:     1   "]
+ "Nodo   33" -> "Nodo   34" [dir=back];
+ "Nodo   35"[label = "Sofia Moreno\nIMG-G:     1   \nIMG-P:     2   "]
+ "Nodo   34" -> "Nodo   35" [dir=back];
+ "Nodo   36"[label = "Isabel Osorio\nIMG-G:     1   \nIMG-P:     1   "]
+ "Nodo   35" -> "Nodo   36" [dir=back];
+ "Nodo   37"[label = "Sofia Martin\nIMG-G:     2   \nIMG-P:     3   "]
+ "Nodo   36" -> "Nodo   37" [dir=back];
+ "Nodo   38"[label = "Sofia Gomez\nIMG-G:     2   \nIMG-P:     1   "]
+ "Nodo   37" -> "Nodo   38" [dir=back];
+ "Nodo   39"[label = "Pablo Diaz\nIMG-G:     4   \nIMG-P:     1   "]
+ "Nodo   38" -> "Nodo   39" [dir=back];
+ "Nodo   40"[label = "Isabel Perez\nIMG-G:     1   \nIMG-P:     3   "]
+ "Nodo   39" -> "Nodo   40" [dir=back];
+ }
+ subgraph cluster_1 {
+ label ="Lista Ventanillas"
+ color=blue
+ node [shape = box, fontname = "Arial", style = filled, color = "lightblue"]
+ "Nodo   41"[label = "Ventanilla     1\nJuan Hernan\nIMG-G:     2   \nIMG-P:     2   "]
+ "Nodo   43"[label = "Ventanilla     2\nVacia"]
+ "Nodo   41" -> "Nodo   43";
+ "Nodo   45"[label = "Ventanilla     3\nSofia Aldana\nIMG-G:     0   \nIMG-P:     4   "]
+ "Nodo   46"[label = "IMG: P"]
+ "Nodo   45" -> "Nodo   46";
+ "Nodo   47"[label = "IMG: P"]
+ "Nodo   46" -> "Nodo   47";
+ "Nodo   43" -> "Nodo   45";
+ }
+ subgraph cluster_2 {
+ label ="Cola Impresion Grandes"
+ color=green
+ node [shape = box, fontname = "Arial", style = filled, color = "lightgreen"]
+ "NodoImpresoraGrande"[label = "Impresora Grande"]
+ "Nodo   49"[label = "Grande"]
+ "NodoImpresoraGrande" -> "Nodo   49";
+ "Nodo   50"[label = "Grande"]
+ "Nodo   49" -> "Nodo   50";
+ "Nodo   51"[label = "Grande"]
+ "Nodo   50" -> "Nodo   51";
+ "Nodo   52"[label = "Grande"]
+ "Nodo   51" -> "Nodo   52";
+ "Nodo   53"[label = "Grande"]
+ "Nodo   52" -> "Nodo   53";
+ "Nodo   54"[label = "Grande"]
+ "Nodo   53" -> "Nodo   54";
+ "Nodo   55"[label = "Grande"]
+ "Nodo   54" -> "Nodo   55";
+ "Nodo   56"[label = "Grande"]
+ "Nodo   55" -> "Nodo   56";
+ "Nodo   57"[label = "Grande"]
+ "Nodo   56" -> "Nodo   57";
+ "Nodo   58"[label = "Grande"]
+ "Nodo   57" -> "Nodo   58";
+ "Nodo   59"[label = "Grande"]
+ "Nodo   58" -> "Nodo   59";
+ "Nodo   60"[label = "Grande"]
+ "Nodo   59" -> "Nodo   60";
+ "Nodo   61"[label = "Grande"]
+ "Nodo   60" -> "Nodo   61";
+ "Nodo   62"[label = "Grande"]
+ "Nodo   61" -> "Nodo   62";
+ "Nodo   63"[label = "Grande"]
+ "Nodo   62" -> "Nodo   63";
+ "Nodo   64"[label = "Grande"]
+ "Nodo   63" -> "Nodo   64";
+ }
+ subgraph cluster_3 {
+ label ="Cola Impresion Pequeñas"
+ color=red
+ node [shape = box, fontname = "Arial", style = filled, color = "lightcoral"]
+ "NodoImpresoraPequena"[label = "Impresora Pequeña"]
+ "Nodo   65"[label = "Pequena"]
+ "NodoImpresoraPequena" -> "Nodo   65";
+ "Nodo   66"[label = "Pequena"]
+ "Nodo   65" -> "Nodo   66";
+ "Nodo   67"[label = "Pequena"]
+ "Nodo   66" -> "Nodo   67";
+ "Nodo   68"[label = "Pequena"]
+ "Nodo   67" -> "Nodo   68";
+ "Nodo   69"[label = "Pequena"]
+ "Nodo   68" -> "Nodo   69";
+ "Nodo   70"[label = "Pequena"]
+ "Nodo   69" -> "Nodo   70";
+ "Nodo   71"[label = "Pequena"]
+ "Nodo   70" -> "Nodo   71";
+ "Nodo   72"[label = "Pequena"]
+ "Nodo   71" -> "Nodo   72";
+ "Nodo   73"[label = "Pequena"]
+ "Nodo   72" -> "Nodo   73";
+ "Nodo   74"[label = "Pequena"]
+ "Nodo   73" -> "Nodo   74";
+ "Nodo   75"[label = "Pequena"]
+ "Nodo   74" -> "Nodo   75";
+ "Nodo   76"[label = "Pequena"]
+ "Nodo   75" -> "Nodo   76";
+ "Nodo   77"[label = "Pequena"]
+ "Nodo   76" -> "Nodo   77";
+ "Nodo   78"[label = "Pequena"]
+ "Nodo   77" -> "Nodo   78";
+ }
+ subgraph cluster_4 {
+ label ="Lista Clientes Espera"
+ color=orange
+ node [shape = box, fontname = "Arial", style = filled, color = "lightyellow"]
+ "Nodo   79"[label = "Pedro Garcia"]
+ "Nodo   80"[label = "Pequena"]
+ "Nodo   79" -> "Nodo   80";
+ "Nodo   82"[label = "Pequena"]
+ "Nodo   80" -> "Nodo   82";
+ "Nodo   84"[label = "Grande"]
+ "Nodo   82" -> "Nodo   84";
+ "Nodo   86"[label = "Maria Sanchez"]
+ "Nodo   87"[label = "Pequena"]
+ "Nodo   86" -> "Nodo   87";
+ "Nodo   89"[label = "Pequena"]
+ "Nodo   87" -> "Nodo   89";
+ "Nodo   91"[label = "Pequena"]
+ "Nodo   89" -> "Nodo   91";
+ "Nodo   79" -> "Nodo   86";
+ "Nodo   93"[label = "Luis Ramirez"]
+ "Nodo   94"[label = "Pequena"]
+ "Nodo   93" -> "Nodo   94";
+ "Nodo   86" -> "Nodo   93";
+ "Nodo   96"[label = "Elena Martinez"]
+ "Nodo   97"[label = "Pequena"]
+ "Nodo   96" -> "Nodo   97";
+ "Nodo   99"[label = "Pequena"]
+ "Nodo   97" -> "Nodo   99";
+ "Nodo   93" -> "Nodo   96";
+ "Nodo  101"[label = "Isabel Aldana"]
+ "Nodo  102"[label = "Pequena"]
+ "Nodo  101" -> "Nodo  102";
+ "Nodo   96" -> "Nodo  101";
+ "Nodo  104"[label = "Carmen Paz"]
+ "Nodo  105"[label = "Pequena"]
+ "Nodo  104" -> "Nodo  105";
+ "Nodo  101" -> "Nodo  104";
+ "Nodo  107"[label = "Sofia Gomez"]
+ "Nodo  104" -> "Nodo  107";
+ "Nodo  108"[label = "Carlos Sainz"]
+ "Nodo  109"[label = "Pequena"]
+ "Nodo  108" -> "Nodo  109";
+ "Nodo  111"[label = "Pequena"]
+ "Nodo  109" -> "Nodo  111";
+ "Nodo  113"[label = "Pequena"]
+ "Nodo  111" -> "Nodo  113";
+ "Nodo  115"[label = "Pequena"]
+ "Nodo  113" -> "Nodo  115";
+ "Nodo  107" -> "Nodo  108";
+ "Nodo  117"[label = "Pedro Perez"]
+ "Nodo  108" -> "Nodo  117";
+ "Nodo  118"[label = "Juan Garcia"]
+ "Nodo  117" -> "Nodo  118";
+ "Nodo  119"[label = "Carlos Hernan"]
+ "Nodo  118" -> "Nodo  119";
+ "Nodo  120"[label = "Isabel Lopez"]
+ "Nodo  119" -> "Nodo  120";
+ "Nodo  120" -> "Nodo   79";
+ }
+ subgraph cluster_5 {
+ label ="Lista Clientes Atendidos"
+ color=grey
+ node [shape = box, fontname = "Arial", style = filled, color = "lightgrey"]
+ "Nodo  121"[label = "Id Cliente:     1   \nNombre cliente:Carlos Perez\nVentanilla que lo atendió:     1   \nImagenes impresas:     4   \nPasos en el sistema:    10   "]
+ "Nodo  122"[label = "Id Cliente:     2   \nNombre cliente:Laura Rodriguez\nVentanilla que lo atendió:     2   \nImagenes impresas:     4   \nPasos en el sistema:    12   "]
+ "Nodo  121" -> "Nodo  122";
+ "Nodo  123"[label = "Id Cliente:     3   \nNombre cliente:Javier Martinez\nVentanilla que lo atendió:     3   \nImagenes impresas:     4   \nPasos en el sistema:    18   "]
+ "Nodo  122" -> "Nodo  123";
+ "Nodo  124"[label = "Id Cliente:     4   \nNombre cliente:Sofia Gonzalez\nVentanilla que lo atendió:     1   \nImagenes impresas:     4   \nPasos en el sistema:    20   "]
+ "Nodo  123" -> "Nodo  124";
+ "Nodo  125"[label = "Id Cliente: 65607   \nNombre cliente:Juan Ruiz\nVentanilla que lo atendió:     3   \nImagenes impresas:     0   \nPasos en el sistema:    21   "]
+ "Nodo  124" -> "Nodo  125";
+ "Nodo  126"[label = "Id Cliente:     5   \nNombre cliente:Diego Lopez\nVentanilla que lo atendió:     2   \nImagenes impresas:     4   \nPasos en el sistema:    24   "]
+ "Nodo  125" -> "Nodo  126";
+ "Nodo  127"[label = "Id Cliente: 63743   \nNombre cliente:Carmen Lopez\nVentanilla que lo atendió:     2   \nImagenes impresas:     1   \nPasos en el sistema:    25   "]
+ "Nodo  126" -> "Nodo  127";
+ "Nodo  128"[label = "Id Cliente:     6   \nNombre cliente:Ana Fernandez\nVentanilla que lo atendió:     3   \nImagenes impresas:     4   \nPasos en el sistema:    30   "]
+ "Nodo  127" -> "Nodo  128";
+ }
+ rankdir=LR
+ }

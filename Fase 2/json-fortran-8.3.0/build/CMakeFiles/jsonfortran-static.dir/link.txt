@@ -1,0 +1,2 @@
+C:\TDM-GCC-64\bin\ar.exe qc lib\libjsonfortran.a "CMakeFiles/jsonfortran-static.dir/src/json_kinds.F90.obj" "CMakeFiles/jsonfortran-static.dir/src/json_parameters.F90.obj" "CMakeFiles/jsonfortran-static.dir/src/json_string_utilities.F90.obj" "CMakeFiles/jsonfortran-static.dir/src/json_value_module.F90.obj" "CMakeFiles/jsonfortran-static.dir/src/json_file_module.F90.obj" "CMakeFiles/jsonfortran-static.dir/src/json_module.F90.obj"
+C:\TDM-GCC-64\bin\ranlib.exe lib\libjsonfortran.a

@@ -1,0 +1,48 @@
+ digraph G {
+ label ="Lista albumes"
+ color=orange
+ node [shape = box, fontname = "Arial", style = filled, color = "lightblue"]
+ "Nodo    0"[label = "Album 1"]
+ "Nodo    1"[label = "       3"]
+ "Nodo    0" -> "Nodo    1";
+ "Nodo    3"[label = "       8"]
+ "Nodo    1" -> "Nodo    3";
+ "Nodo    5"[label = "      12"]
+ "Nodo    3" -> "Nodo    5";
+ "Nodo    7"[label = "Album 10"]
+ "Nodo    8"[label = "       0"]
+ "Nodo    7" -> "Nodo    8";
+ "Nodo   10"[label = "       4"]
+ "Nodo    8" -> "Nodo   10";
+ "Nodo   12"[label = "       6"]
+ "Nodo   10" -> "Nodo   12";
+ "Nodo    0" -> "Nodo    7";"Nodo    7" -> "Nodo    0";
+ "Nodo   14"[label = "Album Jas"]
+ "Nodo   15"[label = "       7"]
+ "Nodo   14" -> "Nodo   15";
+ "Nodo    7" -> "Nodo   14";"Nodo   14" -> "Nodo    7";
+ "Nodo   17"[label = "Album Naho"]
+ "Nodo   18"[label = "       7"]
+ "Nodo   17" -> "Nodo   18";
+ "Nodo   20"[label = "      11"]
+ "Nodo   18" -> "Nodo   20";
+ "Nodo   22"[label = "      12"]
+ "Nodo   20" -> "Nodo   22";
+ "Nodo   14" -> "Nodo   17";"Nodo   17" -> "Nodo   14";
+ "Nodo   24"[label = "Album 15"]
+ "Nodo   25"[label = "       0"]
+ "Nodo   24" -> "Nodo   25";
+ "Nodo   27"[label = "       7"]
+ "Nodo   25" -> "Nodo   27";
+ "Nodo   17" -> "Nodo   24";"Nodo   24" -> "Nodo   17";
+ "Nodo   29"[label = "Album 3"]
+ "Nodo   30"[label = "       0"]
+ "Nodo   29" -> "Nodo   30";
+ "Nodo   32"[label = "       4"]
+ "Nodo   30" -> "Nodo   32";
+ "Nodo   34"[label = "       6"]
+ "Nodo   32" -> "Nodo   34";
+ "Nodo   24" -> "Nodo   29";"Nodo   29" -> "Nodo   24";
+ "Nodo   29" -> "Nodo    0";
+ rankdir=LR
+ }

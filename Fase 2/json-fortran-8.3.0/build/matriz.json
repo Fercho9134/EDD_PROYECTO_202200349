@@ -1,0 +1,248 @@
+
+[
+	{
+		"id_capa": 6,
+		"pixeles":[
+			{
+				"fila":25,
+				"columna":31,
+				"color": "#FFCC33"
+			},
+			{
+				"fila":31,
+				"columna":16,
+				"color": "#FFFF30"
+			}
+			]
+	},
+	{
+		"id_capa": 1,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":10,
+				"columna":6,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":11,
+				"columna":19,
+				"color": "#FFAAAF"
+			}
+			]
+	},
+	{
+		"id_capa": 3,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":10,
+				"columna":6,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":11,
+				"columna":19,
+				"color": "#FFAAAF"
+			}
+			]
+	},
+	{
+		"id_capa": 2,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":10,
+				"columna":6,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":11,
+				"columna":19,
+				"color": "#FFAAAF"
+			}
+			]
+	},
+	{
+		"id_capa": 4,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":10,
+				"columna":6,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":11,
+				"columna":19,
+				"color": "#FFAAAF"
+			}
+			]
+	},
+	{
+		"id_capa": 5,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":10,
+				"columna":6,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":11,
+				"columna":19,
+				"color": "#FFAAAF"
+			}
+			]
+	},
+	{
+		"id_capa": 0,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":10,
+				"columna":6,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":11,
+				"columna":19,
+				"color": "#FFAAAF"
+			}
+			]
+	},
+	{
+		"id_capa": 11,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":10,
+				"columna":6,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":11,
+				"columna":19,
+				"color": "#FFAAAF"
+			}
+			]
+	},
+	{
+		"id_capa": 8,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":10,
+				"columna":6,
+				"color": "#FFFFFF"
+			},
+			{
+				"fila":11,
+				"columna":19,
+				"color": "#FFAAAF"
+			}
+			]
+	},
+	{
+		"id_capa": 9,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			}
+		]
+	},
+	{
+		"id_capa": 10,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			}
+		]
+	},
+	{
+		"id_capa": 7,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			}
+		]
+	},
+	{
+		"id_capa": 15,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			}
+		]
+	},
+	{
+		"id_capa": 13,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			}
+		]
+	},
+	{
+		"id_capa": 14,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			}
+		]
+	},
+	{
+		"id_capa": 12,
+		"pixeles":[
+			{
+				"fila":1,
+				"columna":1,
+				"color": "#FFFFFF"
+			}
+		]
+	}
+]

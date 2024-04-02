@@ -1,0 +1,26 @@
+[
+    {
+        "nombre_album": "Album 1",
+        "imgs": [3,8,12]
+    },
+    {
+        "nombre_album": "Album 10",
+        "imgs": [0,4,6]
+    },
+    {
+        "nombre_album": "Album Jas",
+        "imgs": [1,5,7]
+    },
+    {
+        "nombre_album": "Album Naho",
+        "imgs": [7,11,12]
+    },
+    {
+        "nombre_album": "Album 15",
+        "imgs": [0,7,5]
+    },
+    {
+        "nombre_album": "Album 3",
+        "imgs": [0,4,6]
+    }
+]

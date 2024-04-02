@@ -1,0 +1,52 @@
+[
+    {
+        "dpi":"3291590461103",
+        "nombre_cliente":"Fernando Alonso",
+        "password":"1234"
+    },
+    {
+        "dpi":"3291590461104",
+        "nombre_cliente":"Juan Perez",
+        "password":"1234"
+    },
+    {
+        "dpi":"3291590461105",
+        "nombre_cliente":"Maria Lopez",
+        "password":"1234"
+    },
+    {
+        "dpi":"3291590461106",
+        "nombre_cliente":"Pedro Ramirez",
+        "password":"1234"
+    },
+    {
+        "dpi":"3291590461107",
+        "nombre_cliente":"Josefina Garcia",
+        "password":"1234"
+    },
+    {
+        "dpi":"3291590461108",
+        "nombre_cliente":"Luisa Martinez",
+        "password":"1234"
+    },
+    {
+        "dpi":"3291590461109",
+        "nombre_cliente":"Rosa Perez",
+        "password":"1234"
+    },
+    {
+        "dpi":"3291590461110",
+        "nombre_cliente":"Carlos Ramirez",
+        "password":"1234"
+    },
+    {
+        "dpi":"3291590461111",
+        "nombre_cliente":"Sofia Garcia",
+        "password":"1234"
+    },
+    {
+        "dpi":"3291590461112",
+        "nombre_cliente":"Ricardo Martinez",
+        "password":"1234"
+    }
+]
