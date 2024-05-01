@@ -1,0 +1,38 @@
+ digraph G {
+ subgraph cluster_0 {
+ "NodoEtiqueta" [label="TOP 5 imagenes con mas capas"]
+ "Nodobeeb72eb-96cc-461b-7d1b-28a2b5ffedad" [label="Imagen con id 20 y con 16 capas"]
+ "Nodo3e83806f-f30b-48fe-4d7b-a1e0dbcbec5c" [label="Imagen con id 4 y con 14 capas"]
+ "Nodof7ac29bc-b1f8-4418-403e-baafcbe7331b" [label="Imagen con id 10 y con 13 capas"]
+ "Nodo0e696faf-7527-461a-7c29-5433efddef50" [label="Imagen con id 1 y con 10 capas"]
+ "Nodoeaf1a323-81ad-487f-53c0-0f243fb83d22" [label="Imagen con id 8 y con 5 capas"]
+ }
+ subgraph cluster_nodo_hoja {
+ "NodoEtiqueta_hojas" [label="Capas que son hoja"]
+ "Nodof5f01172-e21a-431b-7745-992eeeef3edb" [label="Capa con id 25"]
+ "Nodof01c4a1a-ea82-4d45-5bb1-2ede8ff311f9" [label="Capa con id 27"]
+ "Nodo80b41c06-e441-4272-477f-69aed49fa51d" [label="Capa con id 31"]
+ "Nodof8fd4edf-9766-4983-7078-d54f91f81b80" [label="Capa con id 35"]
+ "Nodof07285cc-4a46-41d6-59e5-1d0ef7fb86b2" [label="Capa con id 50"]
+ "Nodode4ab57b-970f-4acd-44d7-626cadbf21e8" [label="Capa con id 54"]
+ "Nodoe3c1b444-7042-4eb9-5683-e082ddf51eaf" [label="Capa con id 58"]
+ "Nodo7a6f6648-4dfe-41c1-4e5a-e2e393fbc779" [label="Capa con id 60"]
+ "Nodo74e7b96c-365f-461c-4dfa-0f54eefee017" [label="Capa con id 100"]
+ "Nodof5c945f0-2609-4847-55eb-916bf7bd8df2" [label="Capa con id 105"]
+ "Nodob3da8de5-6caa-4d2d-64f1-7859b27f9263" [label="Capa con id 108"]
+ "Nodofaf68ab6-87e8-4555-6329-a3ec770d5936" [label="Capa con id 110"]
+ "Nodobb5e6fa9-9d0b-4ec6-646d-41bac7f7fbb4" [label="Capa con id 113"]
+ "Nodob7305df1-fa36-4d54-5b80-e916facd5f9b" [label="Capa con id 115"]
+ }
+ subgraph cluster_profundidad {
+ "NodoEtiqueta_profundidad" [label="Profundidad del arbol"]
+ "NodoProfundidad" [label="Profundidad: 25"]
+ }
+ subgraph cluster_listar_capas {
+ "NodoEtiqueta_listar_capas" [label="Listado de capas en diferentes ordenes"]
+ "NodoPreorden" [label=" Preorden: , 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 29, 28, 26, 25, 27, 30, 32, 31, 38, 37, 33, 36, 34, 35, 51, 50, 55, 52, 53, 54, 56, 59, 57, 58, 61, 60, 62, 104, 103, 102, 101, 100, 109, 107, 106, 105, 108, 114, 112, 111, 110, 113, 115"]
+ "NodoInorden" [label="Inorden: , 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115"]
+ "NodoPostorden" [label="Postorden: , 25, 27, 26, 28, 31, 35, 34, 36, 33, 37, 50, 54, 53, 52, 58, 57, 60, 100, 101, 102, 103, 105, 106, 108, 107, 110, 111, 113, 112, 115, 114, 109, 104, 62, 61, 59, 56, 55, 51, 38, 32, 30, 29, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2"]
+ }
+ rankdir=LR
+ }

@@ -1,0 +1,12 @@
+ digraph G {
+ NodoTabla [ label = <<TABLE border="1" cellspacing="0" cellpadding="4">
+ <TR>
+ <TD bgcolor="lightblue"><B> DPI </B></TD>
+ <TD bgcolor="lightblue"><B> Nombres </B></TD>
+ <TD bgcolor="lightblue"><B> Apellidos </B></TD>
+ <TD bgcolor="lightblue"><B> Genero </B></TD>
+ <TD bgcolor="lightblue"><B> Direccion </B></TD>
+ <TD bgcolor="lightblue"><B> Telefono </B></TD>
+ </TR>
+ </TABLE>> margin=0 shape=none]
+ }

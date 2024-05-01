@@ -1,0 +1,6 @@
+ digraph G {
+ "dpi"[label="DPI: 123456789045 \n Nombre: AUXEDDCalificacion \n Contrasena: calificacion"]
+ "cantidad_albumes"[label="Cantidad de albumes: 5"]
+ "cantidad_imagenes"[label="Cantidad de imagenes: 10"]
+ "cantidad_capas"[label="Cantidad de capas: 53"]
+ }

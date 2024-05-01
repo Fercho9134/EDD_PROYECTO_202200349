@@ -1,0 +1,29 @@
+ digraph G {
+ "Nodof911cb99-8f2b-4548-4160-1f14ffdd2ff4"[label= "Sucursal           8 "]
+ "Nodof911cb99-8f2b-4548-4160-1f14ffdd2ff4"->"Nodof1eccf57-8925-4a2f-6fe3-bbccf0e7afc3"
+ "Nodof911cb99-8f2b-4548-4160-1f14ffdd2ff4"->"Nodo690e8cd8-44c4-4ddf-5e6d-73957eadb910"
+ "Nodof1eccf57-8925-4a2f-6fe3-bbccf0e7afc3"[label= "Sucursal           4 "]
+ "Nodof1eccf57-8925-4a2f-6fe3-bbccf0e7afc3"->"Nodo7b618c19-3c16-4018-7ca5-2755f4ff477d"
+ "Nodof1eccf57-8925-4a2f-6fe3-bbccf0e7afc3"->"Nodof7a92b0a-ef59-4f40-5713-ded8deefca5d"
+ "Nodo7b618c19-3c16-4018-7ca5-2755f4ff477d"[label= "Sucursal           2 "]
+ "Nodo7b618c19-3c16-4018-7ca5-2755f4ff477d"->"Nodo1d3dbcb7-c849-4637-6762-b66ae1edcd71"
+ "Nodo7b618c19-3c16-4018-7ca5-2755f4ff477d"->"Nodo902c1afc-c711-4d60-6c0c-2ebb8f7f3d9d"
+ "Nodo1d3dbcb7-c849-4637-6762-b66ae1edcd71"[label= "Sucursal           1 "]
+ "Nodo902c1afc-c711-4d60-6c0c-2ebb8f7f3d9d"[label= "Sucursal           3 "]
+ "Nodof7a92b0a-ef59-4f40-5713-ded8deefca5d"[label= "Sucursal           6 "]
+ "Nodof7a92b0a-ef59-4f40-5713-ded8deefca5d"->"Nodofd684cee-8174-40b0-5c5e-65d5ebdf4c22"
+ "Nodof7a92b0a-ef59-4f40-5713-ded8deefca5d"->"Nodofdac97d0-bd26-465f-6ba8-60a3ffdf7550"
+ "Nodofd684cee-8174-40b0-5c5e-65d5ebdf4c22"[label= "Sucursal           5 "]
+ "Nodofdac97d0-bd26-465f-6ba8-60a3ffdf7550"[label= "Sucursal           7 "]
+ "Nodo690e8cd8-44c4-4ddf-5e6d-73957eadb910"[label= "Sucursal          12 "]
+ "Nodo690e8cd8-44c4-4ddf-5e6d-73957eadb910"->"Nododb6c45db-880e-413a-79dc-7f507e9c89b1"
+ "Nodo690e8cd8-44c4-4ddf-5e6d-73957eadb910"->"Nodoabe1a80d-1dbc-4f1c-7950-8ce9f75d78db"
+ "Nododb6c45db-880e-413a-79dc-7f507e9c89b1"[label= "Sucursal          10 "]
+ "Nododb6c45db-880e-413a-79dc-7f507e9c89b1"->"Nodof95bee4e-1f73-470d-714c-d2bee5be41c0"
+ "Nododb6c45db-880e-413a-79dc-7f507e9c89b1"->"Nodoe46fbff1-538c-4690-46b3-2e7b5fc990f5"
+ "Nodof95bee4e-1f73-470d-714c-d2bee5be41c0"[label= "Sucursal           9 "]
+ "Nodoe46fbff1-538c-4690-46b3-2e7b5fc990f5"[label= "Sucursal          11 "]
+ "Nodoabe1a80d-1dbc-4f1c-7950-8ce9f75d78db"[label= "Sucursal          13 "]
+ "Nodoabe1a80d-1dbc-4f1c-7950-8ce9f75d78db"->"Nodod0bc3ff3-2c79-4d28-63ab-16adabe7eea3"
+ "Nodod0bc3ff3-2c79-4d28-63ab-16adabe7eea3"[label= "Sucursal          14 "]
+ }

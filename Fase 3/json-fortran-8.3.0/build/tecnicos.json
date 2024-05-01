@@ -1,0 +1,26 @@
+[
+    {
+        "dpi":"3291590461103",
+        "nombre": "Juanes",
+        "apellido": "Perez",
+        "genero": "Masculino",
+        "direccion": "Ciudad",
+        "telefono": 12345678
+    },
+    {
+        "dpi":"3291590461823",
+        "nombre": "Maria Lucrecia",
+        "apellido": "Lopez",
+        "genero": "Femenino",
+        "direccion": "Ciudad 2",
+        "telefono": 55456000
+    },
+    {
+        "dpi":"3291590461987",
+        "nombre": "Pedro",
+        "apellido": "Gonzalez",
+        "genero": "Masculino",
+        "direccion": "Ciudad 3",
+        "telefono": 12345678
+    }
+]

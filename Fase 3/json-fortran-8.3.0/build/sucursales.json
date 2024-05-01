@@ -1,0 +1,86 @@
+[
+    {
+        "id":1,
+        "departamento":"Guatemala",
+        "direccion":"Zona 1",
+        "password":"1234"
+    },
+    {
+        "id":2,
+        "departamento":"Escuintla",
+        "direccion":"Zona 2",
+        "password":"1234"
+    },
+    {
+        "id":3,
+        "departamento":"Jalapa",
+        "direccion":"Zona 3",
+        "password":"1234"
+    },
+    {
+        "id":4,
+        "departamento":"Jutiapa",
+        "direccion":"Zona 4",
+        "password":"1234"
+    },
+    {
+        "id":5,
+        "departamento":"Petén",
+        "direccion":"Zona 5",
+        "password":"1234"
+    },
+    {
+        "id":6,
+        "departamento":"Quetzaltenango",
+        "direccion":"Zona 6",
+        "password":"1234"
+    },
+    {
+        "id":7,
+        "departamento":"Retalhuleu",
+        "direccion":"Zona 7",
+        "password":"1234"
+    },
+    {
+        "id":8,
+        "departamento":"Sacatepéquez",
+        "direccion":"Zona 8",
+        "password":"1234"
+    },
+    {
+        "id":9,
+        "departamento":"San Marcos",
+        "direccion":"Zona 9",
+        "password":"1234"
+    },
+    {
+        "id":10,
+        "departamento":"Santa Rosa",
+        "direccion":"Zona 10",
+        "password":"1234"
+    },
+    {
+        "id":11,
+        "departamento":"Sololá",
+        "direccion":"Zona 11",
+        "password":"1234"
+    },
+    {
+        "id":12,
+        "departamento":"Suchitepéquez",
+        "direccion":"Zona 12",
+        "password":"1234"
+    },
+    {
+        "id":13,
+        "departamento":"Totonicapán",
+        "direccion":"Zona 13",
+        "password":"1234"
+    },
+    {
+        "id":14,
+        "departamento":"Zacapa",
+        "direccion":"Zona 14",
+        "password":"1234"
+    }
+]

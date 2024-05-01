@@ -123,10 +123,11 @@ program main
         do
             print *, ""
             print *, "--------Bienvenido ", clienteActual%nombre, "--------"
-            print *, "1. Visualizar reportes de estructuras de datos"
+            print *, "1. Visualizar reportes y estructuras de datos"
             print *, "2. Navegacion y gestion de imagenes"
             print *, "3. Carga masiva"
             print *, "4. Salir"
+            print *, "5. Eliminar cuenta"
             print *, ""
             print *, "Seleccione una opcion:"
             read(*, *) opcion
@@ -142,32 +143,344 @@ program main
                 case(4)
                     clienteActual => null()
                     exit
+                case(5)
+                    call eliminarCuenta()
+                    exit
                 case default
                     print *, "Opcion no valida"
             end select
         end do
     end subroutine mostrarInicioCliente
 
+    subroutine eliminarCuenta
+
+        integer (kind = 8) :: dpi
+        type(nodo_cliente), pointer :: cliente_eliminar
+        print *, ""
+        print *, "*** Eliminar cuenta ***"
+        print *, "Ingrese su DPI para confirmar la eliminacion de su cuenta:"
+        read(*,*) dpi
+
+        cliente_eliminar => arbolClientes%buscar(dpi)
+
+        if (associated(cliente_eliminar) .and. clienteActual%dpi == cliente_eliminar%dpi) then
+                call arbolClientes%eliminar(dpi)
+                print *, "Cuenta eliminada exitosamente"
+                clienteActual => null()
+        else
+            print *, "Datos incorrectos, se cerrara la sesion pero no se eliminara la cuenta"
+        end if
+
+    end subroutine eliminarCuenta
+
     subroutine visualizarReportesUsuario()
-        character(len=100) :: comando_abrir_imagen
-        !Generamos reportes, imagenes etc
-        print *, "Visualizar reportes de estructuras de datos"
-        call clienteActual%arbolCapas%graficarCapa()
-        comando_abrir_imagen = "start abb_capas.png"
-        call system(comando_abrir_imagen)
-        call clienteActual%arbolImagenes%graficar()
-        comando_abrir_imagen = "start avl_imagenes.png"
-        call system(comando_abrir_imagen)
-        call clienteActual%listaAlbumes%graficarListaAlbumes(1)
-        comando_abrir_imagen = "start lista_albumes.png"
-        call system(comando_abrir_imagen)
-    
+        integer Opcion
+
+        !Las opciones serán, reportes y visualiar estructuras
+
+        do
+            print *, ""
+            print *, "--------Visualizar reportes y estructuras de datos--------"
+            print *, "1. Reportes"
+            print *, "2. Visualizar estructuras"
+            print *, "3. Salir"
+            print *, ""
+            print *, "Seleccione una opcion:"
+            read(*, *) opcion
+            print *, ""
+
+            select case(opcion)
+                case(1)
+                    call reportes_usuario()
+                case(2)
+                    call visualizar_estructuras()
+                case(3)
+                    exit
+                case default
+                    print *, "Opcion no valida"
+            end select
+        end do
+
     end subroutine visualizarReportesUsuario
 
+    subroutine reportes_usuario()
+        integer :: io
+        integer :: i
+        character(len=100) :: comando, comando_abrir_imagen
+
+        io = 1
+        open(newunit=io, file="./reporteUsuario.dot")
+        comando = "dot -Tpng ./reporteUsuario.dot -o ./reporteUsuario.png"
+        comando_abrir_imagen = "start reporteUsuario.png"
+
+        write(io, *) "digraph G {"
+
+        !subgrafo top 5 imagenes con mas capas
+        call clienteActual%arbolImagenes%topImagenes(io)
+        call clienteActual%arbolCapas%obtenerNodoHoja(io)
+        call clienteActual%arbolCapas%obtenerProfundidad(io)
+        call clienteActual%arbolCapas%listarCapasOrdenes(io)
+
+        write(io, *) "rankdir=LR"
+
+        write(io,*) "}"
+
+        close(io)
+
+        call execute_command_line(comando, exitstat=i)
+
+
+        if (i == 0) then
+            print *, "Reporte generado exitosamente"
+            call system(comando_abrir_imagen)
+        else
+            print *, "Error al generar el reporte"
+        end if
+
+
+    end subroutine reportes_usuario
+
+    subroutine visualizar_estructuras()
+        character(len=100) :: comando_abrir_imagen
+        integer :: opcion
+        integer :: id_capa, id_imagen
+        type(nodo_avl), pointer :: nodoImagen
+        type(nodo), pointer :: nodoCapa
+
+        !Las opciones seran arbol avl imagenes, arbol abb capas, lista doble circular albumes
+        !Matriz dispersa capa, imagen y arbol capas
+        do
+            print *, ""
+            print *, "--------Visualizar estructuras--------"
+            print *, "1. Arbol AVL de imagenes"
+            print *, "2. Arbol ABB de capas"
+            print *, "3. Lista doble circular de albumes"
+            print *, "4. Matriz dispersa de capa"
+            print *, "5. AVL de imagenes y ABB de capa de una imagen"
+            print *, "6. Salir"
+            print *, ""
+            print *, "Seleccione una opcion:"
+            read(*, *) opcion
+            print *, ""
+
+            select case(opcion)
+                case(1)
+                    call clienteActual%arbolImagenes%graficar_avl()
+                    comando_abrir_imagen = "start avl_imagenes.png"
+                    call system(comando_abrir_imagen)
+                    
+                case(2)
+                    call clienteActual%arbolCapas%graficarCapa()
+                    comando_abrir_imagen = "start abb_capas.png"
+                    call system(comando_abrir_imagen)
+                case(3)
+                    call clienteActual%listaAlbumes%graficarListaAlbumes(1)
+                    comando_abrir_imagen = "start lista_albumes.png"
+                    call system(comando_abrir_imagen)
+                case(4)
+                    print *, "Ingrese el id de la capa a visualizar:"
+                    read(*, *) id_capa
+                    nodoCapa => clienteActual%arbolCapas%buscarCapa(id_capa)
+                    if (associated(nodoCapa)) then
+                        call nodoCapa%capa%graficar()
+                        comando_abrir_imagen = "start matrix_imagen.png"
+                        call system(comando_abrir_imagen)
+                    else
+                        print *, "Capa no encontrada"
+                    end if
+                case(5)
+                    print *, "Ingrese el id de la imagen a visualizar:"
+                    read(*, *) id_imagen
+                    nodoImagen => clienteActual%arbolImagenes%buscar_imagen(id_imagen)
+                    if (associated(nodoImagen)) then
+                        call clienteActual%arbolImagenes%graficar_avl_imagen(id_imagen)
+                        comando_abrir_imagen = "start imagen_capa.png"
+                        call system(comando_abrir_imagen)
+                    else
+                        print *, "Imagen no encontrada"
+                    end if
+                case(6)
+                    exit
+                case default
+                    print *, "Opcion no valida"
+            end select
+        end do
+    end subroutine visualizar_estructuras
+
     subroutine navegarGestionarImagenes()
-        !Navegar y gestionar imagenes
-        print *, "Navegacion y gestion de imagenes"
+        integer :: opcion
+        !Las opciones serán Generacion de imagenes, eliminacion de imagenes
+        do
+            print *, ""
+            print *, "--------Navegacion y gestion de imagenes--------"
+            print *, "1. Generar imagen"
+            print *, "2. Eliminar imagen"
+            print *, "3. Salir"
+            print *, ""
+            print *, "Seleccione una opcion:"
+            read(*, *) opcion
+            print *, ""
+
+            select case(opcion)
+                case(1)
+                    call generarImagenM()
+                case(2)
+                    call eliminarImagen()
+                case(3)
+                    exit
+                case default
+                    print *, "Opcion no valida"
+            end select
+        end do
     end subroutine navegarGestionarImagenes
+
+    subroutine generarImagenM()
+
+        integer :: opcion
+        integer :: cantidad_capas
+
+        !Las opcioes para generar imagenes erán, por recorrido limitado, por arbol de imagenes, por capa
+        do
+            print *, ""
+            print *, "--------Generar imagen--------"
+            print *, "1. Por recorrido limitado"
+            print *, "2. Por arbol de imagenes"
+            print *, "3. Por capa"
+            print *, "4. Salir"
+            print *, ""
+            print *, "Seleccione una opcion:"
+            read(*, *) opcion
+            print *, ""
+
+            select case(opcion)
+                case(1)
+                    print *, "Ingrese la cantidad de capas a utilizar:"
+                    read(*, *) cantidad_capas
+                    call generarImagenRecorridoLimitado(cantidad_capas)
+                case(2)
+                    print *, "Ingrese el id de la imagen a generar:"
+                    read(*, *) cantidad_capas
+                    call generarImagenArbolImagenes(cantidad_capas)
+                case(3)
+                    print *, "Ingrese la cantidad de capas a utilizar:"
+                    read(*, *) cantidad_capas
+                    call generarImagenPorCapa(cantidad_capas)
+                case(4)
+                    exit
+                case default
+                    print *, "Opcion no valida"
+            end select
+        end do
+
+    end subroutine generarImagenM
+
+    subroutine generarImagenRecorridoLimitado(cantidad_capas)
+        integer, intent(in) :: cantidad_capas
+        integer :: opcion
+
+        !Las opciones para el recorrido limitado serán, inorden, preorden, postorden
+        do
+            print *, ""
+            print *, "--------Generar imagen por recorrido limitado--------"
+            print *, "1. Preorden"
+            print *, "2. Inodrden"
+            print *, "3. Postorden"
+            print *, "4. Salir"
+            print *, ""
+            print *, "Seleccione una opcion:"
+            read(*, *) opcion
+            print *, ""
+
+            select case(opcion)
+                case(1)
+                    call clienteActual%arbolCapas%obtenerRecorridoPreorden(cantidad_capas)
+                case(2)
+                    call clienteActual%arbolCapas%obtenerRecorridoInorden(cantidad_capas)
+                case(3)
+                    call clienteActual%arbolCapas%obtenerRecorridoPostorden(cantidad_capas)
+                case(4)
+                    exit
+                case default
+                    print *, "Opcion no valida"
+            end select
+        end do
+
+    end subroutine generarImagenRecorridoLimitado
+
+    subroutine generarImagenArbolImagenes(id_imagen)
+        integer, intent(in) :: id_imagen
+        type(nodo_avl), pointer :: nodoImagen
+
+        nodoImagen => clienteActual%arbolImagenes%buscar_imagen(id_imagen)
+
+        if (associated(nodoImagen)) then
+            call nodoImagen%capas%obtenerRecorridoNiveles()
+        else
+            print *, "Imagen no encontrada"
+        end if
+
+    end subroutine generarImagenArbolImagenes
+
+    subroutine generarImagenPorCapa(cantidad_capas)
+        integer, intent(in) :: cantidad_capas
+        integer :: contador, id_capa, i, j
+        type(nodo), pointer :: nodoCapa
+        type(matrix) :: matriz_general
+        type(node_matriz_val) :: val
+        character(:), allocatable :: nombre_archivo
+        character(len=5) :: id_capa_str
+        character(len=7) :: color_a
+        character(len=256):: comando_abrir_imagen
+
+        nombre_archivo = "Capas: "
+
+        contador = 0
+
+        do while (contador < cantidad_capas)
+            print *, "Ingrese el id de la capa a utilizar:"
+            read(*, *) id_capa
+
+            nodoCapa => clienteActual%arbolCapas%buscarCapa(id_capa)
+
+            if (associated(nodoCapa)) then
+
+                write(id_capa_str, '(I5)') id_capa
+                nombre_archivo = trim(adjustl(nombre_archivo)) // trim(adjustl(id_capa_str)) // ","
+
+                do j = 0, nodoCapa%capa%height
+                    do i = 0, nodoCapa%capa%width
+                        val = nodoCapa%capa%obtenerValor(i, j)
+                        if (val%exists) then
+                            write(color_a, '(A7)') val%valor
+                            call matriz_general%insert(i, j, color_a)
+                        end if
+                    end do
+                end do
+                
+                contador = contador + 1
+            else
+                print *, "Capa no encontrada"
+            end if
+        end do
+
+        call matriz_general%generarImagen(nombre_archivo)
+        comando_abrir_imagen = "start ImagenGenerada.png"
+        call system(comando_abrir_imagen)
+
+    end subroutine generarImagenPorCapa
+
+
+    subroutine eliminarImagen()
+        integer :: id_imagen
+        print *, "Ingrese el id de la imagen a eliminar: "
+        read(*, *) id_imagen
+
+        call clienteActual%arbolImagenes%delete(id_imagen)
+        call clienteActual%listaAlbumes%eliminarNodoListaSimple(id_imagen)
+
+        print *, "Imagen eliminada exitosamente"
+        
+    end subroutine eliminarImagen
 
     subroutine cargaMasivaUsuario()
         integer :: opcion
@@ -249,9 +562,9 @@ program main
                 call jsonc%get(pixeles_pointer, 'color', atributos_pixel_pointer, found)
                 call jsonc%get(atributos_pixel_pointer, color)
 
+
                 call nodoCapa%capa%insert(columna, fila, color)
             end do
-                call nodoCapa%capa%graficar()
         end do
         
     end subroutine cargaMasivaCapas
@@ -287,7 +600,7 @@ program main
 
             !Creamos el nodo en el avl
             
-            call clienteActual%arbolImagenes%insert(id_imagen)
+            call clienteActual%arbolImagenes%inserta_avl(id_imagen)
 
             nodoImagen => clienteActual%arbolImagenes%buscar_imagen(id_imagen)
 
@@ -408,7 +721,7 @@ program main
         do
             print *, ""
             print *, "--------Bienvenido Admin--------"
-            print *, "1. Reportes de administrador"
+            print *, "1. Ver reportes y estructuras de datos"
             print *, "2. Operaciones con usuarios"
             print *, "3. Carga masiva de usuarios"
             print *, "4. Salir"
@@ -433,9 +746,175 @@ program main
     end subroutine mostrarInicioAdmin
 
     subroutine reportesAdmin()
-        !Generamos reportes, imagenes etc
-        print *, "Reportes de administrador"
+        !Opciones ver estructuras y reportes
+        integer :: opcion
+        do
+            print *, ""
+            print *, "--------Reportes y estructuras de datos--------"
+            print *, "1. Visualizar estructuras"
+            print *, "2. Reportes"
+            print *, "3. Salir"
+            print *, ""
+            print *, "Seleccione una opcion:"
+            read(*, *) opcion
+            print *, ""
+
+            select case(opcion)
+                case(1)
+                    call visualizar_estructuras_administrador()
+                case(2)
+                    call reportes_admin()
+                case(3)
+                    exit
+                case default
+                    print *, "Opcion no valida"
+            end select
+        end do
     end subroutine reportesAdmin
+
+    subroutine visualizar_estructuras_administrador()
+
+        character(len=100) :: comando_abrir_imagen
+        comando_abrir_imagen = "start arbolB.jpg"
+        call system(comando_abrir_imagen)
+
+    end subroutine visualizar_estructuras_administrador
+
+    subroutine reportes_admin()
+        integer :: opcion
+        !Las opciones serán generar informe de cliente y listar clientes
+        do
+            print *, ""
+            print *, "--------Reportes--------"
+            print *, "1. Generar informe de cliente"
+            print *, "2. Listar clientes"
+            print *, "3. Salir"
+            print *, ""
+            print *, "Seleccione una opcion:"
+            read(*, *) opcion
+            print *, ""
+
+            select case(opcion)
+                case(1)
+                    call generarInformeCliente()
+                case(2)
+                    call listarClientes()
+                case(3)
+                    exit
+                case default
+                    print *, "Opcion no valida"
+            end select
+        end do
+
+    end subroutine reportes_admin
+
+    subroutine generarInformeCliente()
+
+        integer(kind=8) :: dpi
+        type(nodo_cliente), pointer :: cliente
+        character(len=100) :: comando_abrir_imagen
+        integer :: io
+        character(len=100) :: comando
+        character(len=50) :: dpi_str
+        integer :: cantidad_albumes, cantidad_imagenes, cantidad_capas
+        character(len=12) :: cantidad_albumes_str, cantidad_imagenes_str, cantidad_capas_str
+
+        integer :: i
+        io = 1
+
+        print *, "Ingrese el DPI del cliente a generar el informe:"
+        read(*, *) dpi
+
+        cliente => arbolClientes%buscar(dpi)
+
+        if (associated(cliente)) then
+            open(newunit=io, file="./informeCliente.dot")
+            comando = "dot -Tpng ./informeCliente.dot -o ./informeCliente.png"
+            write(io, *) "digraph G {"
+            
+            write(dpi_str, '(I50)') cliente%dpi
+            write(io, *) '"dpi"'// '[label="DPI: '// trim(adjustl(dpi_str)) // &
+            ' \n Nombre: '// cliente%nombre // &
+            ' \n Contrasena: '// cliente%contrasena // '"]'
+
+            cantidad_albumes = cliente%listaAlbumes%contar_albumes()
+            cantidad_imagenes = cliente%arbolImagenes%contarNodos()
+            cantidad_capas = cliente%arbolCapas%contarCapas()
+
+            write(cantidad_albumes_str, '(I12)') cantidad_albumes
+            write(cantidad_imagenes_str, '(I12)') cantidad_imagenes
+            write(cantidad_capas_str, '(I12)') cantidad_capas
+
+            write(io, *) '"cantidad_albumes"'// '[label="Cantidad de albumes: '//&
+             trim(adjustl(cantidad_albumes_str)) // '"]'
+
+            write(io, *) '"cantidad_imagenes"'// '[label="Cantidad de imagenes: '//&
+                trim(adjustl(cantidad_imagenes_str)) // '"]'
+
+            write(io, *) '"cantidad_capas"'// '[label="Cantidad de capas: '//&
+                trim(adjustl(cantidad_capas_str)) // '"]'
+
+
+
+            write(io, *) "}"
+            close(io)
+
+            call execute_command_line(comando, exitstat=i)
+
+            if (i == 0) then
+                print *, "Informe generado exitosamente"
+                comando_abrir_imagen = "start informeCliente.png"
+            call system(comando_abrir_imagen)
+            else
+                print *, "Error al generar el informe"
+            end if
+
+        else
+            print *, "Cliente con el dpi ingresado no encontrado"
+        end if
+
+    end subroutine generarInformeCliente
+
+    subroutine listarClientes()
+
+        integer :: io
+        type(nodo_cliente), pointer :: cliente
+        character(len=100) :: comando
+        character(len=100) :: comando_abrir_imagen
+        integer :: i, cantidad_imagenes
+        character(len=50) :: cantidad_imagenes_str, dpi_str
+        io = 1
+
+        open(newunit=io, file="./listaClientes.dot")
+        comando = "dot -Tpng ./listaClientes.dot -o ./listaClientes.png"
+        write(io, *) "digraph G {"
+        write(io, *) "rankdir=LR"
+
+        cliente => arbolClientes%head
+        !Mostraremos nombre, dpi y cantidad de imagenes
+        do while (associated(cliente))
+            write(dpi_str, '(I50)') cliente%dpi
+            write(cantidad_imagenes_str, '(I50)') cliente%arbolImagenes%contarNodos()
+            write(io, *) '"dpi'// trim(adjustl(dpi_str)) // '" [label="DPI: '// trim(adjustl(dpi_str)) // &
+                ' \n Nombre: '// cliente%nombre // &
+                ' \n Cantidad de imagenes: '// trim(adjustl(cantidad_imagenes_str)) // '"]'
+            cliente => cliente%next
+        end do
+
+        write(io, *) "}"
+        close(io)
+
+        call execute_command_line(comando, exitstat=i)
+
+        if (i == 0) then
+            print *, "Lista de clientes generada exitosamente"
+            comando_abrir_imagen = "start listaClientes.png"
+            call system(comando_abrir_imagen)
+        else
+            print *, "Error al generar la lista de clientes"
+        end if
+
+    end subroutine listarClientes
 
     subroutine operacionesConUsuarios()
         integer :: opcion

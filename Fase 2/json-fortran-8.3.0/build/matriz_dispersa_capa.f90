@@ -1,8 +1,6 @@
 module matrix_m
     implicit none
-    private
     type :: node_matriz_val
-        private
         logical :: exists = .false.
         character(len=7) :: valor
     end type node_matriz_val
@@ -33,6 +31,7 @@ module matrix_m
         procedure :: imprimirEncabezadoColumnas
         procedure :: graficar
         procedure :: obtenerValor
+        procedure :: generarImagen
     end type matrix
 
 contains
@@ -364,6 +363,81 @@ contains
             end if
             cabeceraFila => cabeceraFila%abajo
         end do
+        val%exists = .false.
         return
     end function obtenerValor
+
+    subroutine generarImagen(self, nombre)
+        class(matrix), intent(in) :: self
+        !Generamos con graphviz la vista de la matriz como una tabla html
+        !renderizamos la tabla en un archivo png
+        !la tabla debera ser de la cantidad de filas y columnas que tenga la matriz
+        !El campo valor de nodo_matriz_val contiene un color en formato hexadecimal
+        !para el fondo de la celda
+        !si el nodo no existe, el color de la celda debera ser blanco
+        !si el nodo existe, el color de la celda debera ser el valor del nodo
+        !No incluir los encabezados de filas y columnas
+        !No incluir el nodo root
+        !El archivo generado debera ser ImagenGenerada.png
+        !El archivo debera ser guardado en la carpeta del proyecto
+
+        !Recordar que j es la fila y i es la columna
+        character(:), allocatable, intent(in) :: nombre
+        integer :: io
+        integer :: i
+        integer :: j
+        type(node_matriz_val) :: val
+        character(len=100) :: comando
+        character(:), allocatable :: contenido
+
+        character(len=256) :: nombre_a
+        character(len=7) :: color_a, ancho_str
+
+        write(nombre_a,'(A256)') nombre
+        io = 1
+
+        comando = "dot -Tpng ./ImagenGenerada.dot -o ./ImagenGenerada.png"
+
+        open(newunit=io, file="./ImagenGenerada.dot")
+
+        write(io, *) "digraph Matrix {"
+
+        !Agregamos un nodo con el nombre de la matriz
+
+        write(io, *) 'NodoTabla [ label = <<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0">'
+
+        do j = 0, self%height
+            write(io, *) '<TR>'
+            do i = 0, self%width
+                val = self%obtenerValor(i,j)
+                if(.not. val%exists) then
+                    contenido = "#FFFFFF"
+                    color_a = "#FFFFFF"
+                else
+                    contenido = val%valor
+                    write(color_a, '(A7)') contenido
+                end if
+                
+                write(io, *) '<TD WIDTH="50" HEIGHT="50" BGCOLOR="'//trim(color_a)//'"></TD>'
+            end do
+            write(io, *) '</TR>'
+        end do
+
+        !Agregamos una celda con el nombre de la matriz, con codesplan del ancho
+        write(ancho_str, '(I7)') (self%width + 1)
+        write(io,*) '<TR><TD COLSPAN="'//ancho_str//'" ALIGN="center"> '//trim(adjustl(nombre_a))//'</TD></TR>'
+
+        write(io, *) '</TABLE>> margin=0 shape=none]'
+
+        write(io, *) '}'
+        close(io)
+
+        call execute_command_line(comando, exitstat=i)
+
+        if ( i == 1 ) then
+            print *, "Ocurrió un error al momento de crear la imagen"
+        else
+            print *, "La imagen fue generada exitosamente"
+        end if
+    end subroutine generarImagen
 end module matrix_m

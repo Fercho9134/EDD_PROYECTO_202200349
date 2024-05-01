@@ -32,7 +32,8 @@ module lista_doble_circular_module
         procedure :: imprimir_lista_doble_circular
         procedure :: buscar_nodo_imagen
         procedure :: graficarListaAlbumes
-
+        procedure :: contar_albumes
+        procedure :: eliminarNodoListaSimple
     end type lista_doble_circular
     
 contains
@@ -424,5 +425,66 @@ contains
         
 
     end subroutine graficarListaAlbumes
+
+    function contar_albumes(self) result(contador)
+        class(lista_doble_circular), intent(in) :: self
+        type(nodo_lista_doble_circular), pointer :: aux
+        integer :: contador
+        character (len=:), allocatable :: nombre_album_cabecera
+        contador = 0
+        if (associated(self%head)) then
+            aux => self%head
+            nombre_album_cabecera = self%head%nombre_album
+
+            do while (associated(aux))
+                contador = contador + 1
+                aux => aux%next
+                if(aux%nombre_album == nombre_album_cabecera) then
+                    exit
+                end if
+            end do
+        end if
+    end function contar_albumes
+
+    subroutine eliminarNodoListaSimple(self, id_imagen)
+        class(lista_doble_circular), intent(inout) :: self
+        integer, intent(in) :: id_imagen
+        type(nodo_lista_doble_circular), pointer :: nodo_lista_doble
+        type(nodo_lista_enlazada_simple), pointer :: nodo_lista_simple, nodo_anterior
+        type(nodo_lista_enlazada_simple), pointer :: nodo_eliminado
+        logical :: encontrado
+        character (len=:), allocatable :: nombre_album_cabecera
+        encontrado = .false.
+        nodo_lista_doble => self%head
+        if (associated(nodo_lista_doble)) then
+            nombre_album_cabecera = nodo_lista_doble%nombre_album
+            do while (associated(nodo_lista_doble))
+                nodo_lista_simple => nodo_lista_doble%lista_imagenes
+                if (associated(nodo_lista_simple)) then
+                    nodo_anterior => null()
+                    do while (associated(nodo_lista_simple))
+                        if (nodo_lista_simple%id_imagen == id_imagen) then
+                            encontrado = .true.
+                            if (associated(nodo_anterior)) then
+                                nodo_anterior%next => nodo_lista_simple%next
+                            else
+                                nodo_lista_doble%lista_imagenes => nodo_lista_simple%next
+                            end if
+                            nodo_eliminado => nodo_lista_simple
+                        end if
+                        nodo_anterior => nodo_lista_simple
+                        nodo_lista_simple => nodo_lista_simple%next
+                    end do
+                end if
+                nodo_lista_doble => nodo_lista_doble%next
+                if (nodo_lista_doble%nombre_album == nombre_album_cabecera) then
+                    exit
+                end if
+            end do
+        end if
+        if (encontrado) then
+            deallocate(nodo_eliminado)
+        end if
+    end subroutine eliminarNodoListaSimple
     
 end module lista_doble_circular_module
